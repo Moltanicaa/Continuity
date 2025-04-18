@@ -75,7 +75,7 @@ abstract class BakedModelManagerMixin {
 	}
 
 	@Inject(method = "bake(Lnet/minecraft/util/profiler/Profiler;Ljava/util/Map;Lnet/minecraft/client/render/model/ModelBaker;Lit/unimi/dsi/fastutil/objects/Object2IntMap;Lnet/minecraft/client/render/entity/model/LoadedEntityModels;Lnet/minecraft/client/render/block/entity/LoadedBlockEntityModels;)Lnet/minecraft/client/render/model/BakedModelManager$BakingResult;", at = @At("HEAD"))
-	private static void continuity$onHeadBake(Profiler profiler, final Map<Identifier, SpriteAtlasManager.AtlasPreparation> atlases, ModelBaker baker, Object2IntMap<BlockState> groups, LoadedEntityModels entityModels, LoadedBlockEntityModels blockEntityModels, CallbackInfoReturnable<Object> cir) {
+	private static void continuity$onHeadBake(Profiler profiler, final Map<Identifier, SpriteAtlasManager.AtlasPreparation> atlases, ModelBaker baker, Object2IntMap<Item> groups, LoadedEntityModels entityModels, LoadedBlockEntityModels blockEntityModels, CallbackInfoReturnable<Object> cir) {
 		BakedModelManagerBakeContext context = BakedModelManagerBakeContext.THREAD_LOCAL.get();
 		if (context != null) {
 			context.beforeBake(atlases);
